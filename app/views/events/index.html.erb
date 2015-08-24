@@ -1,0 +1,13 @@
+<h4>All events</h4>
+<% @events.each do |event| %>
+<%= event.id %>
+<% end %>
+<h4>All past events</h4>
+Event.past
+
+<h4>All upcoming events</h4>
+Event.upcoming
+
+<div>
+<%= link_to 'User Page', user_path(current_user) %>
+</div>

@@ -1,0 +1,7 @@
+<h3>Create event</h3>
+
+<%= form_for(:event, url: events_create_path) do |f| %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.submit 'Sign up' %>
+<% end %>

@@ -1,1 +1,13 @@
 This is <%= current_user.name %>'s content
+<h4>All User's Events</h4>
+<% @events.each do |event| %>
+<%= event.id %>
+<%end%>
+
+<h4>Upcoming events</h4>
+<%= @upcoming_events %>
+
+<h4>Previous events</h4>
+<%= @previous_events %>
+<br>
+<%= link_to 'All events', events_path %>
