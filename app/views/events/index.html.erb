@@ -1,13 +1,22 @@
 <h4>All events</h4>
-<% @events.each do |event| %>
+<% events = @events.each do |event| %>
 <%= event.id %>
 <% end %>
 <h4>All past events</h4>
-Event.past
+<% events = @events.each do |event| %>
+<%= event.id if (event.date < Time.now) %>
+<% end %>
+
 
 <h4>All upcoming events</h4>
-Event.upcoming
+
+<% events = @events.each do |event| %>
+<%= event.id if (event.date > Time.now) %>
+<% end %>
+
+
 
 <div>
+
 <%= link_to 'User Page', user_path(current_user) %>
 </div>
